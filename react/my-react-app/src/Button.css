@@ -1,0 +1,14 @@
+.Tombol {
+    background-color: red; /* Tombol merah */
+    color: white;          /* Teks putih agar kontras */
+    padding: 10px 20px;    /* Spasi dalam tombol */
+    border: none;          /* Hapus border default */
+    border-radius: 5px;    /* Ujung tombol membulat */
+    cursor: pointer;       /* Ubah kursor saat hover */
+    font-size: 16px;       /* Ukuran teks */
+  }
+  
+  .Tombol:hover {
+    background-color: darkred; /* Warna saat hover */
+  }
+  

@@ -7,6 +7,6 @@ import Helloword from './helloword.tsx'
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <App />
-    <Helloword />
+    {/* <Helloword /> */}
   </StrictMode>,
 )
