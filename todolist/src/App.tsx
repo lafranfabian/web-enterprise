@@ -1,15 +1,32 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import { TodoItem } from './components/todoitem';
 import type { TodoDTO } from './todo.dto';
+import supabase from './utils/supabase';
+
+//password supabase Fabianbian1221
+
+
 
 export default function App() {
-  const [todos, setTodos] = useState<TodoDTO[]>([
-    { id: 1, todo: 'Belajar React', status: 0, isDeleted: 0 },
-    { id: 2, todo: 'Ngoding Project', status: 0, isDeleted: 0 },
-    { id: 3, todo: 'Belajar Vite', status: 0, isDeleted: 0 },
-    { id: 4, todo: 'Belajar JS', status: 0, isDeleted: 0 },
-  ]);
+  const [todos, setTodos] = useState<TodoDTO[]>([]);
+
+  useEffect(() => {
+    async function getTodos() {
+    const {data: dataTodos, error} = await supabase.from('todos').select();
+
+    console.log('data todos', dataTodos)
+    if (error) {
+      console.log('error',error);
+    }
+    if (dataTodos) {
+      setTodos(dataTodos)
+    }
+  }
+  
+    getTodos();
+    },[])
+
 
   const onHandleMarkDone = (id: number) => {
     setTodos(prev =>
