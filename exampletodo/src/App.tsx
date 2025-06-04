@@ -1,6 +1,6 @@
 import './App.css'
 import { useState } from 'react'
-import {TodoItem} from './components/TodoItem'
+import { TodoItem } from './components/TodoItem'
 
 export default function App() {
   const [todos, setTodos] = useState([
