@@ -6,7 +6,9 @@ function App() {
 
   useEffect(() => {
     console.log("Component mounted");
-    setCounter(2); 
+  return () => {
+    console.log("Clean-up function dijalankan");
+  };
   }, [counter]); 
 
   return (
